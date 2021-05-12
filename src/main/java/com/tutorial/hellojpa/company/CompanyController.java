@@ -21,11 +21,11 @@ public class CompanyController {
 
     @GetMapping({"/list"})
     public List<CompanyDto> getList(final CompanyDto param, final Pageable pageable, final Sort sort){
-        return null;
+        return companyService.getList(param, pageable, sort);
     }
 
     @GetMapping({"/{companyIdx"})
     public CompanyDto getCompany(final CompanyDto param){
-        return null;
+        return companyService.getCompany(param);
     }
 }
