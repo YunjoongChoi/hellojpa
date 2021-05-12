@@ -52,7 +52,7 @@ public class Company {
         return CompanyDto.builder()
                 .companyIdx(this.companyIdx)
                 .companyName(this.companyName)
-                .description(this.descript)
+                .descript(this.descript)
                 //.companyType(this.companyType)
                 .tel(this.tel)
                 .address(this.address)
