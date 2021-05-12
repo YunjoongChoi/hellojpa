@@ -9,6 +9,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -19,11 +20,18 @@ public class CompanyServiceImpl implements CompanyService{
 
     @Override
     public List<CompanyDto> getList(CompanyDto param, Pageable pageable, Sort sort) {
-        return null;
+        List<CompanyDto> resultList = new ArrayList<>();
+
+        List<Company> companyList = companyRepository.findAll();
+        for(Company company : companyList){
+            resultList.add(company.toDto());
+        }
+
+        return resultList;
     }
 
     @Override
-    public CompanyDto getCompany(CompanyDto param) {
-        return null;
+    public CompanyDto getCompany(Long companyIdx) {
+        return companyRepository.findById(companyIdx).get().toDto();
     }
 }

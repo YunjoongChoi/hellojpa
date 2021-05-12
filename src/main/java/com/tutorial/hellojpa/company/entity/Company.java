@@ -42,6 +42,7 @@ public class Company {
     private Boolean deleteAt;
     @Column
     private LocalDateTime foundateDateTime;
+    @Column(updatable = false)
     @Temporal(TemporalType.TIMESTAMP)
     private Date registDateTime;
     @Temporal(TemporalType.TIMESTAMP)
@@ -52,12 +53,12 @@ public class Company {
                 .companyIdx(this.companyIdx)
                 .companyName(this.companyName)
                 .descript(this.descript)
-                //.companyType(this.companyType)
+                .companyType(this.companyType.getValue())
                 .tel(this.tel)
                 .address(this.address)
                 .zipcode(this.zipcode)
                 .homepage(this.homepage)
-                //.deleteAt(this.deleteAt)
+                .deleteAt(this.deleteAt)
                 .foundateDateTime(this.foundateDateTime)
                 .registDateTime(this.registDateTime)
                 .updateDateTime(this.updateDateTime)
