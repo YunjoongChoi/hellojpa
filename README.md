@@ -9,10 +9,11 @@
   
 # 포함할 내용
 
-- JPA 프로그래밍
+- JPA
     - `Spring Data JPA` p539~
-    - `@Enumerated` p124
-    - `@Temporal` p124
+    - `@Enumerated` p148
+    - `@Temporal` p149
+    - `@Lob` p150
     - `Pageable`, `Sort` p551
     - `queryDSL` p351, p429~
     - `NativeSQL` p352, p443~
