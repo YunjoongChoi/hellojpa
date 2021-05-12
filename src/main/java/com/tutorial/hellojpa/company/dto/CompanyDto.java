@@ -18,7 +18,7 @@ import java.util.List;
 public class CompanyDto {
     private Long companyIdx;
     private String companyName;
-    private String description;
+    private String descript;
     private String companyType;
     private String tel;
     private String address;
@@ -34,7 +34,7 @@ public class CompanyDto {
         return Company.builder()
                 .companyIdx(this.companyIdx)
                 .companyName(this.companyName)
-                .description(this.description)
+                .descript(this.descript)
                 //.companyType(this.companyType)
                 .tel(this.tel)
                 .address(this.address)

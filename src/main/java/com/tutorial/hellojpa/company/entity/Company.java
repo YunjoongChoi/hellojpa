@@ -26,7 +26,7 @@ public class Company {
     @Column
     private String companyName;
     @Lob
-    private String description;
+    private String descript;
     @Enumerated
     private CompanyType companyType;
     @Column
@@ -52,7 +52,7 @@ public class Company {
         return CompanyDto.builder()
                 .companyIdx(this.companyIdx)
                 .companyName(this.companyName)
-                .description(this.description)
+                .description(this.descript)
                 //.companyType(this.companyType)
                 .tel(this.tel)
                 .address(this.address)
