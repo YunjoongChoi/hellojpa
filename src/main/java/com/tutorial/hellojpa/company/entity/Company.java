@@ -10,6 +10,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 
@@ -25,7 +26,7 @@ public class Company {
     @Column
     private String companyName;
     @Lob
-    private String description;
+    private String descript;
     @Enumerated
     private CompanyType companyType;
     @Column
@@ -38,10 +39,10 @@ public class Company {
     private String homepage;
     @OneToMany
     private List<Employee> employeeList;
-    @Enumerated
-    private StatusCode deleteAt;
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date foundateDateTime;
+    @Column
+    private Boolean deleteAt;
+    @Column
+    private LocalDateTime foundateDateTime;
     @Temporal(TemporalType.TIMESTAMP)
     private Date registDateTime;
     @Temporal(TemporalType.TIMESTAMP)
@@ -51,7 +52,7 @@ public class Company {
         return CompanyDto.builder()
                 .companyIdx(this.companyIdx)
                 .companyName(this.companyName)
-                .description(this.description)
+                .descript(this.descript)
                 //.companyType(this.companyType)
                 .tel(this.tel)
                 .address(this.address)
