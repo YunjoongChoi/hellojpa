@@ -10,6 +10,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 
@@ -38,10 +39,10 @@ public class Company {
     private String homepage;
     @OneToMany
     private List<Employee> employeeList;
-    @Enumerated
-    private StatusCode deleteAt;
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date foundateDateTime;
+    @Column
+    private Boolean deleteAt;
+    @Column
+    private LocalDateTime foundateDateTime;
     @Temporal(TemporalType.TIMESTAMP)
     private Date registDateTime;
     @Temporal(TemporalType.TIMESTAMP)

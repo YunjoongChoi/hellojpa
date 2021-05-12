@@ -1,15 +1,13 @@
 package com.tutorial.hellojpa.company.dto;
 
-import com.tutorial.hellojpa.common.enumerate.StatusCode;
 import com.tutorial.hellojpa.company.entity.Company;
-import com.tutorial.hellojpa.company.enumerate.CompanyType;
 import com.tutorial.hellojpa.employee.dto.EmployeeDto;
-import com.tutorial.hellojpa.employee.entity.Employee;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 
@@ -27,8 +25,8 @@ public class CompanyDto {
     private Integer zipcode;
     private String homepage;
     private List<EmployeeDto> employeeDtoList;
-    private String deleteAt;
-    private Date foundateDateTime;
+    private Boolean deleteAt;
+    private LocalDateTime foundateDateTime;
     private Date registDateTime;
     private Date updateDateTime;
 
@@ -42,7 +40,7 @@ public class CompanyDto {
                 .address(this.address)
                 .zipcode(this.zipcode)
                 .homepage(this.homepage)
-                //.deleteAt(this.deleteAt)
+                .deleteAt(this.deleteAt)
                 .foundateDateTime(this.foundateDateTime)
                 .registDateTime(this.registDateTime)
                 .updateDateTime(this.updateDateTime)
