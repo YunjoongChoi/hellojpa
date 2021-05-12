@@ -1,6 +1,5 @@
 package com.tutorial.hellojpa.company.entity;
 
-import com.tutorial.hellojpa.common.enumerate.StatusCode;
 import com.tutorial.hellojpa.company.dto.CompanyDto;
 import com.tutorial.hellojpa.company.enumerate.CompanyType;
 import com.tutorial.hellojpa.employee.entity.Employee;
@@ -27,7 +26,7 @@ public class Company {
     private String companyName;
     @Lob
     private String descript;
-    @Enumerated
+    @Enumerated(EnumType.STRING)
     private CompanyType companyType;
     @Column
     private String tel;
