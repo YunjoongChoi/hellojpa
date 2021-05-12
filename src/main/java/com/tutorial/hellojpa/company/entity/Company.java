@@ -37,6 +37,7 @@ public class Company {
     @Column
     private String homepage;
     @OneToMany
+    @JoinColumn(name = "COMPANY_IDX")
     private List<Employee> employeeList;
     @Column
     private Boolean deleteAt;
