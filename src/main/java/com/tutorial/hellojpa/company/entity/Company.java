@@ -2,6 +2,7 @@ package com.tutorial.hellojpa.company.entity;
 
 import com.tutorial.hellojpa.company.dto.CompanyDto;
 import com.tutorial.hellojpa.company.enumerate.CompanyType;
+import com.tutorial.hellojpa.employee.dto.EmployeeDto;
 import com.tutorial.hellojpa.employee.entity.Employee;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -10,6 +11,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -59,10 +61,19 @@ public class Company {
                 .address(this.address)
                 .zipcode(this.zipcode)
                 .homepage(this.homepage)
+                //.employeeDtoList(Employee.toDtoList(this.employeeList))
                 .deleteAt(this.deleteAt)
                 .foundateDateTime(this.foundateDateTime)
                 .registDateTime(this.registDateTime)
                 .updateDateTime(this.updateDateTime)
                 .build();
+    }
+
+    public static List<CompanyDto> toDtoList(List<Company> companyList){
+        List<CompanyDto> resultList = new ArrayList<>();
+        for(Company company : companyList){
+            resultList.add(company.toDto());
+        }
+        return resultList;
     }
 }

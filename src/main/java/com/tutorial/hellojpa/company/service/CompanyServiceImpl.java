@@ -20,18 +20,11 @@ public class CompanyServiceImpl implements CompanyService{
 
     @Override
     public List<CompanyDto> getList(CompanyDto param, Pageable pageable, Sort sort) {
-        List<CompanyDto> resultList = new ArrayList<>();
-
-        List<Company> companyList = companyRepository.findAll();
-        for(Company company : companyList){
-            resultList.add(company.toDto());
-        }
-
-        return resultList;
+        return Company.toDtoList(companyRepository.findAll());
     }
 
     @Override
-    public CompanyDto getCompany(Long companyIdx) {
-        return companyRepository.findById(companyIdx).get().toDto();
+    public CompanyDto getCompany(CompanyDto param) {
+        return companyRepository.findById(param.getCompanyIdx()).get().toDto();
     }
 }

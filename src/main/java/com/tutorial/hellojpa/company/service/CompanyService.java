@@ -8,5 +8,5 @@ import java.util.List;
 
 public interface CompanyService {
     List<CompanyDto> getList(CompanyDto param, Pageable pageable, Sort sort);
-    CompanyDto getCompany(Long companyIdx);
+    CompanyDto getCompany(CompanyDto param);
 }

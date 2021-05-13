@@ -3,9 +3,7 @@ package com.tutorial.hellojpa.company;
 import com.tutorial.hellojpa.company.dto.CompanyDto;
 import com.tutorial.hellojpa.company.repository.CompanyRepository;
 import com.tutorial.hellojpa.company.service.CompanyService;
-import com.tutorial.hellojpa.company.service.CompanyServiceImpl;
 import org.junit.jupiter.api.Test;
-import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -17,15 +15,16 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class CompanyServiceTest {
     @Mock
     private CompanyRepository companyRepository;
-    @InjectMocks
-    private CompanyServiceImpl companyService;
+    @Mock
+    private CompanyService companyService;
 
     @Test
-    public void 전체_조회_테스트(){
+    public void 전체_목록_조회_테스트(){
         /*given*/
+        CompanyDto param = CompanyDto.builder().build();
 
         /*when*/
-        List<CompanyDto> companyDtoList = companyService.getList(CompanyDto.builder().build(), null, null);
+        List<CompanyDto> companyDtoList = companyService.getList(param, null, null);
 
         /*then*/
         assertThat(companyDtoList.size() == 11);
@@ -34,9 +33,12 @@ public class CompanyServiceTest {
     @Test
     public void 상세_조회_테스트(){
         /*given*/
+        CompanyDto param = CompanyDto.builder()
+                                        .companyIdx(10L)
+                                        .build();
 
         /*when*/
-        CompanyDto companyDto = companyService.getCompany(10L);
+        CompanyDto companyDto = companyService.getCompany(param);
 
         /*then*/
         assertThat("기업10".equals(companyDto.getCompanyName()));
