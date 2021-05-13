@@ -27,6 +27,8 @@ public class EmployeeController {
 
     @GetMapping({"/{employeeIdx}"})
     public EmployeeDto getEmployee(@PathVariable final Long employeeIdx){
-        return employeeService.getEmployee(employeeIdx);
+        return employeeService.getEmployee(EmployeeDto.builder()
+                                                        .employeeIdx(employeeIdx)
+                                                        .build());
     }
 }

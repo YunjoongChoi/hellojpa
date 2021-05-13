@@ -20,18 +20,11 @@ public class EmployeeServiceImpl implements EmployeeService{
 
     @Override
     public List<EmployeeDto> getList(EmployeeDto param, Pageable pageable, Sort sort) {
-        List<EmployeeDto> resultList = new ArrayList<>();
-
-        List<Employee> employeeList = employeeRepository.findAll();
-        for(Employee employee : employeeList){
-            resultList.add(employee.toDto());
-        }
-
-        return resultList;
+        return Employee.toDtoList(employeeRepository.findAll());
     }
 
     @Override
-    public EmployeeDto getEmployee(Long employeeIdx) {
-        return employeeRepository.findById(employeeIdx).get().toDto();
+    public EmployeeDto getEmployee(EmployeeDto param) {
+        return employeeRepository.findById(param.getEmployeeIdx()).get().toDto();
     }
 }

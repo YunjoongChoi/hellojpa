@@ -8,5 +8,5 @@ import java.util.List;
 
 public interface EmployeeService {
     List<EmployeeDto> getList(EmployeeDto param, Pageable pageable, Sort sort);
-    EmployeeDto getEmployee(Long employeeIdx);
+    EmployeeDto getEmployee(EmployeeDto param);
 }
