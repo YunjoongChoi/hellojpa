@@ -11,7 +11,9 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Builder
@@ -52,5 +54,13 @@ public class Employee {
                 .registDateTime(this.registDateTime)
                 .updateDateTime(this.updateDateTime)
                 .build();
+    }
+
+    public static List<EmployeeDto> toDtoList(List<Employee> employeeList){
+        List<EmployeeDto> resultList = new ArrayList<>();
+        for(Employee employee : employeeList){
+            resultList.add(employee.toDto());
+        }
+        return resultList;
     }
 }
