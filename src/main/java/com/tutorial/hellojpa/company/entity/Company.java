@@ -1,8 +1,8 @@
 package com.tutorial.hellojpa.company.entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.tutorial.hellojpa.company.dto.CompanyDto;
 import com.tutorial.hellojpa.company.enumerate.CompanyType;
-import com.tutorial.hellojpa.employee.dto.EmployeeDto;
 import com.tutorial.hellojpa.employee.entity.Employee;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -38,8 +38,8 @@ public class Company {
     private Integer zipcode;
     @Column
     private String homepage;
-    @OneToMany
-    @JoinColumn(name = "COMPANY_IDX")
+    @OneToMany(mappedBy = "company")
+    @JsonManagedReference
     private List<Employee> employeeList;
     @Column
     private Boolean deleteAt;
@@ -61,7 +61,7 @@ public class Company {
                 .address(this.address)
                 .zipcode(this.zipcode)
                 .homepage(this.homepage)
-                //.employeeDtoList(Employee.toDtoList(this.employeeList))
+                .employeeDtoList(Employee.toDtoList(this.employeeList))
                 .deleteAt(this.deleteAt)
                 .foundateDateTime(this.foundateDateTime)
                 .registDateTime(this.registDateTime)

@@ -1,5 +1,6 @@
 package com.tutorial.hellojpa.employee.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.tutorial.hellojpa.common.enumerate.GenderType;
 import com.tutorial.hellojpa.company.entity.Company;
 import com.tutorial.hellojpa.employee.dto.EmployeeDto;
@@ -28,6 +29,7 @@ public class Employee {
     private String employeeName;
     @ManyToOne
     @JoinColumn(name = "COMPANY_IDX")
+    @JsonBackReference
     private Company company;
     @Enumerated(EnumType.STRING)
     private EmployeePositionType employeePositionType;
