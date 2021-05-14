@@ -6,7 +6,10 @@ import lombok.AllArgsConstructor;
 import lombok.extern.java.Log;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
@@ -23,7 +26,7 @@ public class CompanyController {
     }
 
     @GetMapping({"/{companyIdx}"})
-    public CompanyDto getCompany(@PathVariable Long companyIdx){
+    public CompanyDto getCompany(@PathVariable final Long companyIdx){
         return companyService.getCompany(CompanyDto.builder()
                                                     .companyIdx(companyIdx)
                                                     .build());

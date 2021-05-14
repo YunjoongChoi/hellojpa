@@ -6,6 +6,7 @@ import com.tutorial.hellojpa.company.service.CompanyService;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.thymeleaf.util.StringUtils;
 
 import java.util.List;
 
@@ -41,6 +42,6 @@ public class CompanyServiceTest {
         CompanyDto companyDto = companyService.getCompany(param);
 
         /*then*/
-        assertThat("기업10".equals(companyDto.getCompanyName()));
+        assertThat(StringUtils.equals("기업10", companyDto.getCompanyName()));
     }
 }
