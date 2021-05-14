@@ -1,15 +1,14 @@
 package com.tutorial.hellojpa.company;
 
 import com.tutorial.hellojpa.company.dto.CompanyDto;
+import com.tutorial.hellojpa.company.entity.Company;
 import com.tutorial.hellojpa.company.service.CompanyService;
 import lombok.AllArgsConstructor;
 import lombok.extern.java.Log;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -20,9 +19,9 @@ import java.util.List;
 public class CompanyController {
     private final CompanyService companyService;
 
-    @GetMapping({"", "/", "/list"})
-    public List<CompanyDto> getList(final CompanyDto param, final Pageable pageable, final Sort sort){
-        return companyService.getList(param, pageable, sort);
+    @GetMapping({"", "/"})
+    public List<CompanyDto> getList(final CompanyDto param, final Pageable pageable){
+        return companyService.getList(param, pageable);
     }
 
     @GetMapping({"/{companyIdx}"})

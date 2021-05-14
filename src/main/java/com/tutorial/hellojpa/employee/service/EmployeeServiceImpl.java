@@ -18,7 +18,7 @@ public class EmployeeServiceImpl implements EmployeeService{
     private final EmployeeRepository employeeRepository;
 
     @Override
-    public List<EmployeeDto> getList(EmployeeDto param, Pageable pageable, Sort sort) {
+    public List<EmployeeDto> getList(EmployeeDto param, Pageable pageable) {
         return Employee.toDtoList(employeeRepository.findAll());
     }
 
