@@ -1,6 +1,7 @@
 package com.tutorial.hellojpa.employee.dto;
 
 import com.tutorial.hellojpa.common.enumerate.GenderType;
+import com.tutorial.hellojpa.company.dto.CompanyDto;
 import com.tutorial.hellojpa.company.entity.Company;
 import com.tutorial.hellojpa.employee.entity.Employee;
 import com.tutorial.hellojpa.employee.enumerate.EmployeePositionType;
@@ -19,7 +20,7 @@ import java.util.Date;
 public class EmployeeDto {
     private Long employeeIdx;
     private String employeeName;
-    private Company company;
+    private CompanyDto companyDto;
     private String employeePositionType;
     private String genderType;
     private LocalDate birthDate;
@@ -31,7 +32,7 @@ public class EmployeeDto {
         return Employee.builder()
                 .employeeIdx(this.employeeIdx)
                 .employeeName(this.employeeName)
-                .company(this.company)
+                .company(this.companyDto.toEntity())
                 //.employeePositionType(this.employeePositionType)
                 //.genderType(this.genderType)
                 .birthDate(this.birthDate)

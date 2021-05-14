@@ -5,6 +5,7 @@ import com.tutorial.hellojpa.common.enumerate.GenderType;
 import com.tutorial.hellojpa.company.entity.Company;
 import com.tutorial.hellojpa.employee.dto.EmployeeDto;
 import com.tutorial.hellojpa.employee.enumerate.EmployeePositionType;
+import com.tutorial.hellojpa.locker.entity.Locker;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -27,7 +28,7 @@ public class Employee {
     private Long employeeIdx;
     @Column(nullable = false)
     private String employeeName;
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "COMPANY_IDX")
     @JsonBackReference
     private Company company;
@@ -43,12 +44,14 @@ public class Employee {
     private Date registDateTime;
     @Temporal(TemporalType.TIMESTAMP)
     private Date updateDateTime;
+    @OneToOne(mappedBy = "employee")
+    private Locker locker;
 
     public EmployeeDto toDto(){
         return EmployeeDto.builder()
                 .employeeIdx(this.employeeIdx)
                 .employeeName(this.employeeName)
-                .company(this.company)
+                .companyDto(this.company.toDto())
                 .employeePositionType(this.employeePositionType.getValue())
                 .genderType(this.genderType.getValue())
                 .birthDate(this.birthDate)
