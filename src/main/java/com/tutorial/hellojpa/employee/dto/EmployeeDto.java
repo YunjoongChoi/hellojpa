@@ -5,15 +5,13 @@ import com.tutorial.hellojpa.company.dto.CompanyDto;
 import com.tutorial.hellojpa.company.entity.Company;
 import com.tutorial.hellojpa.employee.entity.Employee;
 import com.tutorial.hellojpa.employee.enumerate.EmployeePositionType;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.time.LocalDate;
 import java.util.Date;
 
 @Builder
+@Setter
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor

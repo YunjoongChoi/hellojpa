@@ -6,10 +6,7 @@ import com.tutorial.hellojpa.company.entity.Company;
 import com.tutorial.hellojpa.employee.dto.EmployeeDto;
 import com.tutorial.hellojpa.employee.enumerate.EmployeePositionType;
 import com.tutorial.hellojpa.locker.entity.Locker;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -19,6 +16,7 @@ import java.util.List;
 
 @Entity
 @Builder
+@Setter
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor

@@ -2,16 +2,14 @@ package com.tutorial.hellojpa.company.dto;
 
 import com.tutorial.hellojpa.company.entity.Company;
 import com.tutorial.hellojpa.employee.dto.EmployeeDto;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 
 @Builder
+@Setter
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor

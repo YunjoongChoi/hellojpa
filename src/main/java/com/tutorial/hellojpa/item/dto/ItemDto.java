@@ -2,15 +2,13 @@ package com.tutorial.hellojpa.item.dto;
 
 import com.tutorial.hellojpa.item.entity.Item;
 import com.tutorial.hellojpa.locker.dto.LockerDto;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Builder
+@Setter
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor

@@ -3,16 +3,14 @@ package com.tutorial.hellojpa.item.entity;
 import com.tutorial.hellojpa.item.dto.ItemDto;
 import com.tutorial.hellojpa.locker.dto.LockerDto;
 import com.tutorial.hellojpa.locker.entity.Locker;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
 @Builder
+@Setter
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
