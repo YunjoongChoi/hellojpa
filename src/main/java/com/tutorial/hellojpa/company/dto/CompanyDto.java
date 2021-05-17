@@ -27,21 +27,4 @@ public class CompanyDto {
     private LocalDateTime foundateDateTime;
     private Date registDateTime;
     private Date updateDateTime;
-
-    public Company toEntity(){
-        return Company.builder()
-                .companyIdx(this.companyIdx)
-                .companyName(this.companyName)
-                .descript(this.descript)
-                //.companyType(this.companyType)
-                .tel(this.tel)
-                .address(this.address)
-                .zipcode(this.zipcode)
-                .homepage(this.homepage)
-                .deleteAt(this.deleteAt)
-                .foundateDateTime(this.foundateDateTime)
-                .registDateTime(this.registDateTime)
-                .updateDateTime(this.updateDateTime)
-                .build();
-    }
 }

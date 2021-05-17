@@ -9,6 +9,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @AllArgsConstructor
@@ -19,7 +20,10 @@ public class ItemServiceImpl implements ItemService{
 
     @Override
     public List<ItemDto> getItemList(ItemDto param) {
-        return ItemDto.toDtoList(itemRepository.findAll());
+        return itemRepository.findAll()
+                            .stream()
+                            .map(Item -> modelMapper.map(Item, ItemDto.class))
+                            .collect(Collectors.toList());
     }
 
     @Override

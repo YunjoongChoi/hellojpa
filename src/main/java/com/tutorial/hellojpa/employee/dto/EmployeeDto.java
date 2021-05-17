@@ -25,18 +25,4 @@ public class EmployeeDto {
     private Date joinDate;
     private Date registDateTime;
     private Date updateDateTime;
-
-    public Employee toEntity(){
-        return Employee.builder()
-                .employeeIdx(this.employeeIdx)
-                .employeeName(this.employeeName)
-                .company(this.companyDto.toEntity())
-                //.employeePositionType(this.employeePositionType)
-                //.genderType(this.genderType)
-                .birthDate(this.birthDate)
-                .joinDate(this.joinDate)
-                .registDateTime(this.registDateTime)
-                .updateDateTime(this.updateDateTime)
-                .build();
-    }
 }

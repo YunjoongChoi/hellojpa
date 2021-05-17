@@ -22,12 +22,4 @@ public class Item {
     private String itemName;
     @ManyToMany(mappedBy = "itemList")
     private List<Locker> lockerList;
-
-    public ItemDto toDto(){
-        return ItemDto.builder()
-                .itemIdx(this.itemIdx)
-                .itemName(this.itemName)
-                .lockerDtoList(LockerDto.toDtoList(this.lockerList))
-                .build();
-    }
 }

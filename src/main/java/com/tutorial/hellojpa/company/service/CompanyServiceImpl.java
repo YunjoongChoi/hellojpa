@@ -25,7 +25,10 @@ public class CompanyServiceImpl implements CompanyService{
 
     @Override
     public List<CompanyDto> getList(CompanyDto param, Pageable pageable) {
-        return Company.toDtoList(companyRepository.findAll());
+        return companyRepository.findAll()
+                                .stream()
+                                .map(Company -> modelMapper.map(Company, CompanyDto.class))
+                                .collect(Collectors.toList());
     }
 
     @Override

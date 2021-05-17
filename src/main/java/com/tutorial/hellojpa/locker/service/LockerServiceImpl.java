@@ -10,6 +10,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @AllArgsConstructor
@@ -20,7 +21,10 @@ public class LockerServiceImpl implements LockerService{
 
     @Override
     public List<LockerDto> getLockerList(LockerDto param, Pageable pageable) {
-        return LockerDto.toDtoList(lockerRepository.findAll());
+        return lockerRepository.findAll()
+                                .stream()
+                                .map(Locker -> modelMapper.map(Locker, LockerDto.class))
+                                .collect(Collectors.toList());
     }
 
     @Override
