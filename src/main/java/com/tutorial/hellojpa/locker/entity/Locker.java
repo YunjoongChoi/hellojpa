@@ -1,15 +1,15 @@
 package com.tutorial.hellojpa.locker.entity;
 
 import com.tutorial.hellojpa.employee.entity.Employee;
+import com.tutorial.hellojpa.item.dto.ItemDto;
+import com.tutorial.hellojpa.item.entity.Item;
 import com.tutorial.hellojpa.locker.dto.LockerDto;
-import com.tutorial.hellojpa.product.entity.Product;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -24,21 +24,14 @@ public class Locker {
     @OneToOne
     @JoinColumn(name = "EMPLOYEE_IDX")
     private Employee employee;
-    //@ManyToMany
-    //private List<Product> productList;
+    @ManyToMany
+    private List<Item> itemList;
 
     public LockerDto toDto(){
         return LockerDto.builder()
                 .lockerIdx(this.lockerIdx)
                 .employeeDto(this.employee.toDto())
+                .itemDtoList(ItemDto.toDtoList(this.itemList))
                 .build();
-    }
-
-    public static List<LockerDto> toDtoList(List<Locker> lockerList){
-        List<LockerDto> resultList = new ArrayList<>();
-        for(Locker locker : lockerList){
-            resultList.add(locker.toDto());
-        }
-        return resultList;
     }
 }
