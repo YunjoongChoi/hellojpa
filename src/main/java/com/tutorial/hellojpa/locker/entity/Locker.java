@@ -30,8 +30,8 @@ public class Locker {
     public LockerDto toDto(){
         return LockerDto.builder()
                 .lockerIdx(this.lockerIdx)
-                .employeeDto(this.employee.toDto())
-                .itemDtoList(ItemDto.toDtoList(this.itemList))
+                //.employeeDto(this.employee.toDto())
+                //.itemDtoList(ItemDto.toDtoList(this.itemList))
                 .build();
     }
 }

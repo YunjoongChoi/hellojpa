@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.extern.java.Log;
 import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -24,7 +25,7 @@ public class LockerController {
     }
 
     @GetMapping({"/{lockerIdx}"})
-    public LockerDto getLocker(final Long lockerIdx){
+    public LockerDto getLocker(@PathVariable final Long lockerIdx){
         return lockerService.getLocker(LockerDto.builder()
                                                 .lockerIdx(lockerIdx)
                                                 .build());

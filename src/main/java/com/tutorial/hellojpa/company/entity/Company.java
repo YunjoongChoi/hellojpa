@@ -61,7 +61,7 @@ public class Company {
                 .address(this.address)
                 .zipcode(this.zipcode)
                 .homepage(this.homepage)
-                .employeeDtoList(Employee.toDtoList(this.employeeList))
+                //.employeeDtoList(Employee.toDtoList(this.employeeList))
                 .deleteAt(this.deleteAt)
                 .foundateDateTime(this.foundateDateTime)
                 .registDateTime(this.registDateTime)

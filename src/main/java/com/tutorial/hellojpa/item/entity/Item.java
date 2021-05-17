@@ -22,7 +22,7 @@ public class Item {
     private Long itemIdx;
     @Column
     private String itemName;
-    @ManyToMany
+    @ManyToMany(mappedBy = "itemList")
     private List<Locker> lockerList;
 
     public ItemDto toDto(){
