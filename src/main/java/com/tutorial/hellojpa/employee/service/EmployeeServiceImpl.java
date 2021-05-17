@@ -11,6 +11,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @AllArgsConstructor
@@ -21,7 +22,10 @@ public class EmployeeServiceImpl implements EmployeeService{
 
     @Override
     public List<EmployeeDto> getList(EmployeeDto param, Pageable pageable) {
-        return Employee.toDtoList(employeeRepository.findAll());
+        return employeeRepository.findAll()
+                .stream()
+                .map(Employee -> modelMapper.map(Employee, EmployeeDto.class))
+                .collect(Collectors.toList());
     }
 
     @Override

@@ -48,30 +48,4 @@ public class Company {
     private Date registDateTime;
     @Temporal(TemporalType.TIMESTAMP)
     private Date updateDateTime;
-
-    public CompanyDto toDto(){
-        return CompanyDto.builder()
-                .companyIdx(this.companyIdx)
-                .companyName(this.companyName)
-                .descript(this.descript)
-                .companyType(this.companyType.getValue())
-                .tel(this.tel)
-                .address(this.address)
-                .zipcode(this.zipcode)
-                .homepage(this.homepage)
-                //.employeeDtoList(Employee.toDtoList(this.employeeList))
-                .deleteAt(this.deleteAt)
-                .foundateDateTime(this.foundateDateTime)
-                .registDateTime(this.registDateTime)
-                .updateDateTime(this.updateDateTime)
-                .build();
-    }
-
-    public static List<CompanyDto> toDtoList(List<Company> companyList){
-        List<CompanyDto> resultList = new ArrayList<>();
-        for(Company company : companyList){
-            resultList.add(company.toDto());
-        }
-        return resultList;
-    }
 }

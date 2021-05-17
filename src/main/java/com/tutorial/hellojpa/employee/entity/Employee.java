@@ -44,26 +44,4 @@ public class Employee {
     private Date updateDateTime;
     @OneToOne(mappedBy = "employee")
     private Locker locker;
-
-    public EmployeeDto toDto(){
-        return EmployeeDto.builder()
-                .employeeIdx(this.employeeIdx)
-                .employeeName(this.employeeName)
-                .companyDto(this.company.toDto())
-                .employeePositionType(this.employeePositionType.getValue())
-                .genderType(this.genderType.getValue())
-                .birthDate(this.birthDate)
-                .joinDate(this.joinDate)
-                .registDateTime(this.registDateTime)
-                .updateDateTime(this.updateDateTime)
-                .build();
-    }
-
-    public static List<EmployeeDto> toDtoList(List<Employee> employeeList){
-        List<EmployeeDto> resultList = new ArrayList<>();
-        for(Employee employee : employeeList){
-            resultList.add(employee.toDto());
-        }
-        return resultList;
-    }
 }
