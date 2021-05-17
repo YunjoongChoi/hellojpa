@@ -18,7 +18,7 @@ public class LockerServiceImpl implements LockerService{
 
     @Override
     public List<LockerDto> getLockerList(LockerDto param, Pageable pageable) {
-        return Locker.toDtoList(lockerRepository.findAll());
+        return LockerDto.toDtoList(lockerRepository.findAll());
     }
 
     @Override
