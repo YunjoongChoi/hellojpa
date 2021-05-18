@@ -15,5 +15,5 @@ import java.util.List;
 public class ItemDto {
     private Long itemIdx;
     private String itemName;
-    private List<LockerDto> lockers;
+//    private List<LockerDto> lockers;
 }

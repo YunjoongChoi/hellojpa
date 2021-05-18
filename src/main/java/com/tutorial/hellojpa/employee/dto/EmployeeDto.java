@@ -16,7 +16,7 @@ import java.util.Date;
 public class EmployeeDto {
     private Long employeeIdx;
     private String employeeName;
-    private CompanyDto company;
+    //private CompanyDto company;
     private String employeePositionType;
     private String genderType;
     private LocalDate birthDate;

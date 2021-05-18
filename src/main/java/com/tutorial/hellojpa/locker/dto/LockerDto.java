@@ -15,6 +15,6 @@ import java.util.List;
 @AllArgsConstructor
 public class LockerDto {
     private Long lockerIdx;
-    private EmployeeDto employeeDto;
-    private List<ItemDto> items;
+//    private EmployeeDto employeeDto;
+//    private List<ItemDto> items;
 }

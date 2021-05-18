@@ -7,7 +7,6 @@ import lombok.AllArgsConstructor;
 import lombok.extern.java.Log;
 import org.modelmapper.ModelMapper;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -33,5 +32,13 @@ public class EmployeeServiceImpl implements EmployeeService{
         return modelMapper.map(employeeRepository.findById(param.getEmployeeIdx())
                                                                 .orElse(Employee.builder()
                                                                                 .build()), EmployeeDto.class);
+    }
+
+    @Override
+    public List<EmployeeDto> getEmployees(EmployeeDto param, Pageable pageable) {
+        return employeeRepository.findAll(pageable)
+                                    .stream()
+                                    .map(Employee -> modelMapper.map(Employee, EmployeeDto.class))
+                                    .collect(Collectors.toList());
     }
 }

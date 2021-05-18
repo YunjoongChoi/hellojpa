@@ -9,4 +9,5 @@ import java.util.List;
 public interface EmployeeService {
     List<EmployeeDto> getAllEmployees(EmployeeDto param);
     EmployeeDto getEmployee(EmployeeDto param);
+    List<EmployeeDto> getEmployees(EmployeeDto param, Pageable pageable);
 }

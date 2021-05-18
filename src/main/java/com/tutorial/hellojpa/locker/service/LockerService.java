@@ -8,4 +8,5 @@ import java.util.List;
 public interface LockerService {
     public List<LockerDto> getAllLockers(LockerDto param);
     public LockerDto getLocker(LockerDto param);
+    public List<LockerDto> getLockers(LockerDto param, Pageable pageable);
 }

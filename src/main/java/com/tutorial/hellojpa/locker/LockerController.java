@@ -19,7 +19,7 @@ import java.util.List;
 public class LockerController {
     private final LockerService lockerService;
 
-    @GetMapping({"", "/"})
+    @GetMapping({"/all"})
     public List<LockerDto> getAllLockers(final LockerDto param){
         return lockerService.getAllLockers(param);
     }
@@ -29,5 +29,10 @@ public class LockerController {
         return lockerService.getLocker(LockerDto.builder()
                                                 .lockerIdx(lockerIdx)
                                                 .build());
+    }
+
+    @GetMapping({"", "/"})
+    public List<LockerDto> getLockers(final LockerDto param, final Pageable pageable){
+        return lockerService.getLockers(param, pageable);
     }
 }
