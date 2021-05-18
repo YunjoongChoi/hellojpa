@@ -20,7 +20,7 @@ public class EmployeeServiceImpl implements EmployeeService{
     private final ModelMapper modelMapper;
 
     @Override
-    public List<EmployeeDto> getAllEmployees(EmployeeDto param) {
+    public List<EmployeeDto> getAllEmployees() {
         return employeeRepository.findAll()
                 .stream()
                 .map(Employee -> modelMapper.map(Employee, EmployeeDto.class))
@@ -35,7 +35,7 @@ public class EmployeeServiceImpl implements EmployeeService{
     }
 
     @Override
-    public List<EmployeeDto> getEmployees(EmployeeDto param, Pageable pageable) {
+    public List<EmployeeDto> getEmployees(Pageable pageable) {
         return employeeRepository.findAll(pageable)
                                     .stream()
                                     .map(Employee -> modelMapper.map(Employee, EmployeeDto.class))

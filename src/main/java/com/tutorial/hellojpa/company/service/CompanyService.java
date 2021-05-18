@@ -7,7 +7,7 @@ import org.springframework.data.domain.Pageable;
 import java.util.List;
 
 public interface CompanyService {
-    List<CompanyDto> getAllCompanies(CompanyDto param);
+    List<CompanyDto> getAllCompanies();
     CompanyDto getCompany(CompanyDto param);
-    List<CompanyDto> getCompanies(CompanyDto param, Pageable pageable);
+    List<CompanyDto> getCompanies(Pageable pageable);
 }

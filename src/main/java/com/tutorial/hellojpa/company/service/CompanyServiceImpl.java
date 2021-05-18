@@ -24,7 +24,7 @@ public class CompanyServiceImpl implements CompanyService{
     private final ModelMapper modelMapper;
 
     @Override
-    public List<CompanyDto> getAllCompanies(CompanyDto param) {
+    public List<CompanyDto> getAllCompanies() {
         return companyRepository.findAll()
                                 .stream()
                                 .map(Company -> modelMapper.map(Company, CompanyDto.class))
@@ -39,7 +39,7 @@ public class CompanyServiceImpl implements CompanyService{
     }
 
     @Override
-    public List<CompanyDto> getCompanies(CompanyDto param, Pageable pageable) {
+    public List<CompanyDto> getCompanies(Pageable pageable) {
         return companyRepository.findAll(pageable)
                                 .stream()
                                 .map(Company -> modelMapper.map(Company, CompanyDto.class))

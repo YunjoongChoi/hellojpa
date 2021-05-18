@@ -7,7 +7,7 @@ import org.springframework.data.domain.Sort;
 import java.util.List;
 
 public interface EmployeeService {
-    List<EmployeeDto> getAllEmployees(EmployeeDto param);
+    List<EmployeeDto> getAllEmployees();
     EmployeeDto getEmployee(EmployeeDto param);
-    List<EmployeeDto> getEmployees(EmployeeDto param, Pageable pageable);
+    List<EmployeeDto> getEmployees(Pageable pageable);
 }

@@ -20,8 +20,8 @@ public class ItemController {
     private final ItemService itemService;
 
     @GetMapping({ "/all"})
-    public List<ItemDto> getAllItems(final ItemDto param){
-        return itemService.getAllItems(param);
+    public List<ItemDto> getAllItems(){
+        return itemService.getAllItems();
     }
 
     @GetMapping({"/{itemIdx}"})
@@ -32,7 +32,7 @@ public class ItemController {
     }
 
     @GetMapping({"", "/"})
-    public List<ItemDto> getItems(final ItemDto param, final Pageable pageable){
-        return itemService.getItems(param, pageable);
+    public List<ItemDto> getItems(final Pageable pageable){
+        return itemService.getItems(pageable);
     }
 }

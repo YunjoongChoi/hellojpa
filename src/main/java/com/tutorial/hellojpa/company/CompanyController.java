@@ -20,8 +20,8 @@ public class CompanyController {
     private final CompanyService companyService;
 
     @GetMapping({ "/all"})
-    public List<CompanyDto> getAllCompanies(final CompanyDto param){
-        return companyService.getAllCompanies(param);
+    public List<CompanyDto> getAllCompanies(){
+        return companyService.getAllCompanies();
     }
 
     @GetMapping({"/{companyIdx}"})
@@ -32,7 +32,7 @@ public class CompanyController {
     }
 
     @GetMapping({"", "/"})
-    public List<CompanyDto> getCompanies(final CompanyDto param, final Pageable pageable){
-        return companyService.getCompanies(param, pageable);
+    public List<CompanyDto> getCompanies(final Pageable pageable){
+        return companyService.getCompanies(pageable);
     }
 }

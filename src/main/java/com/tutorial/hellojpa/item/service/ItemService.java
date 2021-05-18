@@ -6,7 +6,7 @@ import org.springframework.data.domain.Pageable;
 import java.util.List;
 
 public interface ItemService {
-    public List<ItemDto> getAllItems(ItemDto param);
+    public List<ItemDto> getAllItems();
     public ItemDto getItem(ItemDto param);
-    List<ItemDto> getItems(ItemDto param, Pageable pageable);
+    List<ItemDto> getItems(Pageable pageable);
 }

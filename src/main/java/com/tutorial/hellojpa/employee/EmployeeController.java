@@ -21,8 +21,8 @@ public class EmployeeController {
     private final EmployeeService employeeService;
 
     @GetMapping({ "/all"})
-    public List<EmployeeDto> getAllEmployees(final EmployeeDto param){
-        return employeeService.getAllEmployees(param);
+    public List<EmployeeDto> getAllEmployees(){
+        return employeeService.getAllEmployees();
     }
 
     @GetMapping({"/{employeeIdx}"})
@@ -33,7 +33,7 @@ public class EmployeeController {
     }
 
     @GetMapping({"", "/"})
-    public List<EmployeeDto> getEmployees(final EmployeeDto param, final Pageable pageable){
-        return employeeService.getEmployees(param, pageable);
+    public List<EmployeeDto> getEmployees(final Pageable pageable){
+        return employeeService.getEmployees(pageable);
     }
 }
