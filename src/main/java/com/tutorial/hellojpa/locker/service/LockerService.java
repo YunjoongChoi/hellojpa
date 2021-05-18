@@ -6,6 +6,6 @@ import org.springframework.data.domain.Pageable;
 import java.util.List;
 
 public interface LockerService {
-    public List<LockerDto> getLockerList(LockerDto param, Pageable pageable);
+    public List<LockerDto> getAllLockers(LockerDto param);
     public LockerDto getLocker(LockerDto param);
 }

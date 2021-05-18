@@ -20,9 +20,9 @@ import java.util.List;
 public class EmployeeController {
     private final EmployeeService employeeService;
 
-    @GetMapping({"", "/"})
-    public List<EmployeeDto> getList(final EmployeeDto param, Pageable pageable){
-        return employeeService.getList(param, pageable);
+    @GetMapping({ "/all"})
+    public List<EmployeeDto> getAllEmployees(final EmployeeDto param){
+        return employeeService.getAllEmployees(param);
     }
 
     @GetMapping({"/{employeeIdx}"})

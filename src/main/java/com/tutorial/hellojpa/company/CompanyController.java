@@ -19,9 +19,9 @@ import java.util.List;
 public class CompanyController {
     private final CompanyService companyService;
 
-    @GetMapping({"", "/"})
-    public List<CompanyDto> getList(final CompanyDto param, final Pageable pageable){
-        return companyService.getList(param, pageable);
+    @GetMapping({ "/all"})
+    public List<CompanyDto> getAllCompanies(final CompanyDto param){
+        return companyService.getAllCompanies(param);
     }
 
     @GetMapping({"/{companyIdx}"})

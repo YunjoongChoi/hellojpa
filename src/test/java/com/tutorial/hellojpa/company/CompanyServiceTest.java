@@ -25,7 +25,7 @@ public class CompanyServiceTest {
         CompanyDto param = CompanyDto.builder().build();
 
         /*when*/
-        List<CompanyDto> companyDtoList = companyService.getList(param, null);
+        List<CompanyDto> companyDtoList = companyService.getAllCompanies(param);
 
         /*then*/
         assertThat(companyDtoList.size() == 11);

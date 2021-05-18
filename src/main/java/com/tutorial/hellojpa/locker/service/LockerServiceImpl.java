@@ -20,7 +20,7 @@ public class LockerServiceImpl implements LockerService{
     private final ModelMapper modelMapper;
 
     @Override
-    public List<LockerDto> getLockerList(LockerDto param, Pageable pageable) {
+    public List<LockerDto> getAllLockers(LockerDto param) {
         return lockerRepository.findAll()
                                 .stream()
                                 .map(Locker -> modelMapper.map(Locker, LockerDto.class))

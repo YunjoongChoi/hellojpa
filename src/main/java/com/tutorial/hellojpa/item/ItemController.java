@@ -18,9 +18,9 @@ import java.util.List;
 public class ItemController {
     private final ItemService itemService;
 
-    @GetMapping({"", "/"})
-    public List<ItemDto> getItemDtoList(final ItemDto param){
-        return itemService.getItemList(param);
+    @GetMapping({ "/all"})
+    public List<ItemDto> getAllItems(final ItemDto param){
+        return itemService.getAllItems(param);
     }
 
     @GetMapping({"/{itemIdx}"})

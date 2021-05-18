@@ -21,7 +21,7 @@ public class EmployeeServiceImpl implements EmployeeService{
     private final ModelMapper modelMapper;
 
     @Override
-    public List<EmployeeDto> getList(EmployeeDto param, Pageable pageable) {
+    public List<EmployeeDto> getAllEmployees(EmployeeDto param) {
         return employeeRepository.findAll()
                 .stream()
                 .map(Employee -> modelMapper.map(Employee, EmployeeDto.class))

@@ -7,13 +7,10 @@ import lombok.AllArgsConstructor;
 import lombok.extern.java.Log;
 import org.modelmapper.ModelMapper;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -24,7 +21,7 @@ public class CompanyServiceImpl implements CompanyService{
     private final ModelMapper modelMapper;
 
     @Override
-    public List<CompanyDto> getList(CompanyDto param, Pageable pageable) {
+    public List<CompanyDto> getAllCompanies(CompanyDto param) {
         return companyRepository.findAll()
                                 .stream()
                                 .map(Company -> modelMapper.map(Company, CompanyDto.class))

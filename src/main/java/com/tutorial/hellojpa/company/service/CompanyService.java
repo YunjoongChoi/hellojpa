@@ -9,6 +9,6 @@ import org.springframework.data.domain.Sort;
 import java.util.List;
 
 public interface CompanyService {
-    List<CompanyDto> getList(CompanyDto param, Pageable pageable);
+    List<CompanyDto> getAllCompanies(CompanyDto param);
     CompanyDto getCompany(CompanyDto param);
 }
