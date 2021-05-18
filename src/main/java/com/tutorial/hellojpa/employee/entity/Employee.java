@@ -28,7 +28,6 @@ public class Employee {
     private String employeeName;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "COMPANY_IDX")
-    @JsonBackReference
     private Company company;
     @Enumerated(EnumType.STRING)
     private EmployeePositionType employeePositionType;

@@ -20,6 +20,6 @@ public class Item {
     private Long itemIdx;
     @Column
     private String itemName;
-    @ManyToMany(mappedBy = "itemList")
-    private List<Locker> lockerList;
+    @ManyToMany(mappedBy = "items")
+    private List<Locker> lockers;
 }

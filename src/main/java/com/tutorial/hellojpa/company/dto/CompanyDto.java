@@ -1,6 +1,5 @@
 package com.tutorial.hellojpa.company.dto;
 
-import com.tutorial.hellojpa.company.entity.Company;
 import com.tutorial.hellojpa.employee.dto.EmployeeDto;
 import lombok.*;
 
@@ -22,7 +21,7 @@ public class CompanyDto {
     private String address;
     private Integer zipcode;
     private String homepage;
-    private List<EmployeeDto> employeeDtoList;
+    private List<EmployeeDto> employees;
     private Boolean deleteAt;
     private LocalDateTime foundateDateTime;
     private Date registDateTime;
