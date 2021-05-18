@@ -16,5 +16,5 @@ import java.util.List;
 public class LockerDto {
     private Long lockerIdx;
     private EmployeeDto employeeDto;
-    private List<ItemDto> itemDtoList;
+    private List<ItemDto> items;
 }

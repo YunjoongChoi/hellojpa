@@ -1,14 +1,12 @@
 package com.tutorial.hellojpa.company.entity;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
-import com.tutorial.hellojpa.company.dto.CompanyDto;
 import com.tutorial.hellojpa.company.enumerate.CompanyType;
 import com.tutorial.hellojpa.employee.entity.Employee;
 import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -37,8 +35,7 @@ public class Company {
     @Column
     private String homepage;
     @OneToMany(mappedBy = "company")
-    @JsonManagedReference
-    private List<Employee> employeeList;
+    private List<Employee> employees;
     @Column
     private Boolean deleteAt;
     @Column

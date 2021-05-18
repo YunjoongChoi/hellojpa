@@ -23,5 +23,5 @@ public class Locker {
     @JoinColumn(name = "EMPLOYEE_IDX")
     private Employee employee;
     @ManyToMany
-    private List<Item> itemList;
+    private List<Item> items;
 }
