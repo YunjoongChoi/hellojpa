@@ -5,9 +5,12 @@ import com.tutorial.hellojpa.company.entity.Company;
 import com.tutorial.hellojpa.company.repository.CompanyRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.java.Log;
+import org.modelmapper.Converter;
 import org.modelmapper.ModelMapper;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -33,5 +36,13 @@ public class CompanyServiceImpl implements CompanyService{
         return modelMapper.map(companyRepository.findById(param.getCompanyIdx())
                                                                 .orElse(Company.builder()
                                                                                 .build()), CompanyDto.class);
+    }
+
+    @Override
+    public List<CompanyDto> getCompanies(CompanyDto param, Pageable pageable) {
+        return companyRepository.findAll(pageable)
+                                .stream()
+                                .map(Company -> modelMapper.map(Company, CompanyDto.class))
+                                .collect(Collectors.toList());
     }
 }

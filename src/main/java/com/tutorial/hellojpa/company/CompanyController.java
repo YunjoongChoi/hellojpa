@@ -30,4 +30,9 @@ public class CompanyController {
                                                     .companyIdx(companyIdx)
                                                     .build());
     }
+
+    @GetMapping({"", "/"})
+    public List<CompanyDto> getCompanies(final CompanyDto param, final Pageable pageable){
+        return companyService.getCompanies(param, pageable);
+    }
 }

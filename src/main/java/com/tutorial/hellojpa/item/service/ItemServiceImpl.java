@@ -6,6 +6,7 @@ import com.tutorial.hellojpa.item.repository.ItemRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.java.Log;
 import org.modelmapper.ModelMapper;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -31,5 +32,13 @@ public class ItemServiceImpl implements ItemService{
         return modelMapper.map(itemRepository.findById(param.getItemIdx())
                                                             .orElse(Item.builder()
                                                                         .build()), ItemDto.class);
+    }
+
+    @Override
+    public List<ItemDto> getItems(ItemDto param, Pageable pageable) {
+        return itemRepository.findAll(pageable)
+                                .stream()
+                                .map(Item -> modelMapper.map(Item, ItemDto.class))
+                                .collect(Collectors.toList());
     }
 }

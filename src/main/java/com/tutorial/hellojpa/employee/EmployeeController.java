@@ -31,4 +31,9 @@ public class EmployeeController {
                                                         .employeeIdx(employeeIdx)
                                                         .build());
     }
+
+    @GetMapping({"", "/"})
+    public List<EmployeeDto> getEmployees(final EmployeeDto param, final Pageable pageable){
+        return employeeService.getEmployees(param, pageable);
+    }
 }

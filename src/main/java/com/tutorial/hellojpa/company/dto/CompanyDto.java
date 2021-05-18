@@ -21,7 +21,7 @@ public class CompanyDto {
     private String address;
     private Integer zipcode;
     private String homepage;
-    private List<EmployeeDto> employees;
+//    private List<EmployeeDto> employees;
     private Boolean deleteAt;
     private LocalDateTime foundateDateTime;
     private Date registDateTime;

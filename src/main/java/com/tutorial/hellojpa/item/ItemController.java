@@ -4,6 +4,7 @@ import com.tutorial.hellojpa.item.dto.ItemDto;
 import com.tutorial.hellojpa.item.service.ItemService;
 import lombok.AllArgsConstructor;
 import lombok.extern.java.Log;
+import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,5 +29,10 @@ public class ItemController {
         return itemService.getItem(ItemDto.builder()
                                         .itemIdx(itemIdx)
                                         .build());
+    }
+
+    @GetMapping({"", "/"})
+    public List<ItemDto> getItems(final ItemDto param, final Pageable pageable){
+        return itemService.getItems(param, pageable);
     }
 }
