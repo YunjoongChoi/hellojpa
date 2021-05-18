@@ -1,5 +1,6 @@
 package com.tutorial.hellojpa.company.dto;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.tutorial.hellojpa.employee.dto.EmployeeDto;
 import lombok.*;
 
@@ -21,7 +22,8 @@ public class CompanyDto {
     private String address;
     private Integer zipcode;
     private String homepage;
-//    private List<EmployeeDto> employees;
+    @JsonManagedReference
+    private List<EmployeeDto> employees;
     private Boolean deleteAt;
     private LocalDateTime foundateDateTime;
     private Date registDateTime;
