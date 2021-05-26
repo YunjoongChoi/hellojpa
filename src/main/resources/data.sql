@@ -52,7 +52,7 @@ VALUES ('슬리퍼')
         , ('과자')
         , ('명함');
 
-INSERT INTO ITEM_LOCKERS (LOCKERS_LOCKER_IDX, ITEMS_ITEM_IDX)
+INSERT INTO LOCKER_ITEMS (LOCKERS_LOCKER_IDX, ITEMS_ITEM_IDX)
 VALUES (1, 3)
      , (1, 1)
      , (3, 1);

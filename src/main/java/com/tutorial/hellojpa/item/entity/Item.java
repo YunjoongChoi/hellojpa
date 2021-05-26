@@ -22,7 +22,7 @@ public class Item {
     private Long itemIdx;
     @Column
     private String itemName;
-    @JsonManagedReference
-    @ManyToMany
+    @JsonBackReference
+    @ManyToMany(mappedBy = "items")
     private List<Locker> lockers;
 }

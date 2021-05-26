@@ -20,6 +20,6 @@ public class LockerDto {
     private Long lockerIdx;
     @JsonManagedReference
     private EmployeeDto employeeDto;
-    @JsonBackReference
+    @JsonManagedReference
     private List<ItemDto> items;
 }

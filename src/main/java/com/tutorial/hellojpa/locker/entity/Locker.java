@@ -25,7 +25,7 @@ public class Locker {
     @OneToOne
     @JoinColumn(name = "EMPLOYEE_IDX")
     private Employee employee;
-    @JsonBackReference
-    @ManyToMany(mappedBy = "lockers")
+    @JsonManagedReference
+    @ManyToMany
     private List<Item> items;
 }
