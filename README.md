@@ -20,10 +20,10 @@
     - `@ManyToOne`
     - `@OneToOne`
     - `@ManyToMany`
-    - `Pageable`, `Sort`
-    - `JPA 메소드 네임 쿼리`
     - `ModelMapper`
     - `MapStruct`
+    - `Pageable`, `Sort`
+    - `JPA 메소드 네임 쿼리`
 - TDD
     - `JUnit5`
     - `Spring REST Docs`
@@ -47,6 +47,8 @@
 - Spring Web MVC
 - Spring Data JPA
 - H2
+- ModelMapper 2.3.0
+- MapStruct 1.4.2
 - JUnit 5
 - Spring REST Docs
 
