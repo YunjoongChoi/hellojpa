@@ -14,11 +14,11 @@
     - `@Enumerated`
     - `@Temporal`
     - `@Lob`
-    - `Pageable`, `Sort`
     - `@OneToMany`
     - `@ManyToOne`
     - `@OneToOne`
     - `@ManyToMany`
+    - `Pageable`, `Sort`
     - `ModelMapper`
     - `MapStruct`
 - TDD
