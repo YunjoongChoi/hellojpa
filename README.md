@@ -10,16 +10,17 @@
 # 포함할 내용
 
 - JPA
-    - `Spring Data JPA` p539~
-    - `@Enumerated` p148
-    - `@Temporal` p149
-    - `@Lob` p150
-    - `Pageable`, `Sort` p551
-    - `queryDSL` p351, p429~
-    - `NativeSQL` p352, p443~
-    - `@Query` p549
+    - `Spring Data JPA`
+    - `@Enumerated`
+    - `@Temporal`
+    - `@Lob`
+    - `Pageable`, `Sort`
     - `@OneToMany`
     - `@ManyToOne`
+    - `@OneToOne`
+    - `@ManyToMany`
+    - `ModelMapper`
+    - `MapStruct`
 - TDD
     - `JUnit5`
     - `Spring REST Docs`
@@ -41,8 +42,6 @@
 - Lombok
 - Spring Configuration Processor
 - Spring Web MVC
-- Spring Web Services
-- Thymeleaf (미사용 예정, 일단 포함)
 - Spring Data JPA
 - H2
 - JUnit 5
