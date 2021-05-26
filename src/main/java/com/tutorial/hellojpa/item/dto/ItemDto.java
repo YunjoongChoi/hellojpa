@@ -16,6 +16,5 @@ import java.util.List;
 public class ItemDto {
     private Long itemIdx;
     private String itemName;
-    @JsonManagedReference
     private List<LockerDto> lockers;
 }

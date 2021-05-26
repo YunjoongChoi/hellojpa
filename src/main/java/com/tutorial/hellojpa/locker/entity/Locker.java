@@ -1,5 +1,7 @@
 package com.tutorial.hellojpa.locker.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.tutorial.hellojpa.employee.entity.Employee;
 import com.tutorial.hellojpa.item.dto.ItemDto;
 import com.tutorial.hellojpa.item.entity.Item;
@@ -21,7 +23,9 @@ public class Locker {
     private Long lockerIdx;
     @OneToOne
     @JoinColumn(name = "EMPLOYEE_IDX")
+    @JsonManagedReference
     private Employee employee;
     @ManyToMany
+    @JsonManagedReference
     private List<Item> items;
 }

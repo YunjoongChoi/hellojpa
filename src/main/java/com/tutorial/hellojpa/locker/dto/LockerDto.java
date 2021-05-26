@@ -7,6 +7,7 @@ import com.tutorial.hellojpa.item.dto.ItemDto;
 import com.tutorial.hellojpa.locker.entity.Locker;
 import lombok.*;
 
+import javax.persistence.OneToOne;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,8 +18,6 @@ import java.util.List;
 @AllArgsConstructor
 public class LockerDto {
     private Long lockerIdx;
-    @JsonManagedReference
     private EmployeeDto employeeDto;
-    @JsonBackReference
     private List<ItemDto> items;
 }

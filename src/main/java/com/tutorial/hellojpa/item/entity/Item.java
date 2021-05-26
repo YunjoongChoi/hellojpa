@@ -1,5 +1,6 @@
 package com.tutorial.hellojpa.item.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.tutorial.hellojpa.item.dto.ItemDto;
 import com.tutorial.hellojpa.locker.dto.LockerDto;
 import com.tutorial.hellojpa.locker.entity.Locker;
@@ -21,5 +22,6 @@ public class Item {
     @Column
     private String itemName;
     @ManyToMany(mappedBy = "items")
+    @JsonBackReference
     private List<Locker> lockers;
 }

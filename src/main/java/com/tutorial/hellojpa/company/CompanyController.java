@@ -35,4 +35,14 @@ public class CompanyController {
     public List<CompanyDto> getCompanies(final Pageable pageable){
         return companyService.getCompanies(pageable);
     }
+
+    @GetMapping({"/keyword"})
+    public List<CompanyDto> searchByKeyword(final CompanyDto param, final Pageable pageable){
+        return companyService.searchCompanies(param, pageable);
+    }
+
+    @GetMapping({"/dynamic_search"})
+    public List<CompanyDto> searchCompaniesDynamically(final CompanyDto param, final Pageable pageable){
+        return companyService.searchCompaniesDynamically(param, pageable);
+    }
 }
