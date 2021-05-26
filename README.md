@@ -21,6 +21,7 @@
     - `@OneToOne`
     - `@ManyToMany`
     - `Pageable`, `Sort`
+    - `JPA 메소드 네임 쿼리`
     - `ModelMapper`
     - `MapStruct`
 - TDD
