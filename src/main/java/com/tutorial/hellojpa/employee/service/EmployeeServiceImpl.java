@@ -6,11 +6,9 @@ import com.tutorial.hellojpa.employee.repository.EmployeeRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.java.Log;
 import org.modelmapper.ModelMapper;
-import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 

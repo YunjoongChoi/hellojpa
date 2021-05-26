@@ -1,19 +1,16 @@
 package com.tutorial.hellojpa.employee.entity;
 
-import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.tutorial.hellojpa.common.enumerate.GenderType;
 import com.tutorial.hellojpa.company.entity.Company;
-import com.tutorial.hellojpa.employee.dto.EmployeeDto;
 import com.tutorial.hellojpa.employee.enumerate.EmployeePositionType;
 import com.tutorial.hellojpa.locker.entity.Locker;
 import lombok.*;
-import org.hibernate.annotations.BatchSize;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 @Entity
 @Builder

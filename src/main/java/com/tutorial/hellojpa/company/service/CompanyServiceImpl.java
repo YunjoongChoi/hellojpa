@@ -6,15 +6,10 @@ import com.tutorial.hellojpa.company.mapper.CompanyMapper;
 import com.tutorial.hellojpa.company.repository.CompanyRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.java.Log;
-import org.modelmapper.Converter;
 import org.modelmapper.ModelMapper;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -28,12 +23,6 @@ public class CompanyServiceImpl implements CompanyService{
 
     @Override
     public List<CompanyDto> getAllCompanies() {
-        List<CompanyDto> companyDtos = new ArrayList<>();
-        List<Company> companies = companyRepository.findAll();
-        for(Company company : companies){
-            companyDtos.add(modelMapper.map(company, CompanyDto.class));
-        }
-
         return companyRepository.findAll()
                                 .stream()
                                 .map(Company -> modelMapper.map(Company, CompanyDto.class))
@@ -49,19 +38,10 @@ public class CompanyServiceImpl implements CompanyService{
 
     @Override
     public List<CompanyDto> getCompanies(Pageable pageable) {
-        List<CompanyDto> companyDtoList = new ArrayList<>();
-        Page<Company> companyList = companyRepository.findAll(pageable);
-        for(Company company : companyList){
-            companyDtoList.add(modelMapper.map(company, CompanyDto.class));
-        }
-        return companyDtoList;
-
-        /*return companyRepository.findAll(pageable)
+        return companyRepository.findAll(pageable)
                                 .stream()
                                 .map(Company -> modelMapper.map(Company, CompanyDto.class))
-                                .collect(Collectors.toList());*/
-
-        /*return companyMapper.toDto(companyRepository.findAll(pageable));*/
+                                .collect(Collectors.toList());
     }
 
     @Override
@@ -70,10 +50,5 @@ public class CompanyServiceImpl implements CompanyService{
                                 .stream()
                                 .map(Company -> modelMapper.map(Company, CompanyDto.class))
                                 .collect(Collectors.toList());
-    }
-
-    @Override
-    public List<CompanyDto> searchCompaniesDynamically(CompanyDto param, Pageable pageable) {
-        return null;
     }
 }

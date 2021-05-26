@@ -1,8 +1,10 @@
 package com.tutorial.hellojpa.employee.enumerate;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 @Getter
+@AllArgsConstructor
 public enum EmployeePositionType {
     PLANNER("기획자")
     , DESIGNER("디자이너")
@@ -10,9 +12,5 @@ public enum EmployeePositionType {
     , BACK_END("백엔드 개발자")
     , DATA_ENGINEER("데이터 엔지니어");
 
-    private String value;
-
-    private EmployeePositionType(String value) {
-        this.value = value;
-    }
+    private final String value;
 }

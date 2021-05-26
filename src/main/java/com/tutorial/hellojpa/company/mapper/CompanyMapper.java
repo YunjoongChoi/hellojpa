@@ -3,8 +3,6 @@ package com.tutorial.hellojpa.company.mapper;
 import com.tutorial.hellojpa.company.dto.CompanyDto;
 import com.tutorial.hellojpa.company.entity.Company;
 import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
-import org.mapstruct.factory.Mappers;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Component;
 

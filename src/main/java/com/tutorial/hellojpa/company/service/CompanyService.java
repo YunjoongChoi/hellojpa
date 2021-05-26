@@ -10,5 +10,4 @@ public interface CompanyService {
     CompanyDto getCompany(CompanyDto param);
     List<CompanyDto> getCompanies(Pageable pageable);
     List<CompanyDto> searchCompanies(CompanyDto param, Pageable pageable);
-    List<CompanyDto> searchCompaniesDynamically(CompanyDto param, Pageable pageable);
 }

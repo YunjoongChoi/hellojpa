@@ -1,9 +1,6 @@
 package com.tutorial.hellojpa.item.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-import com.tutorial.hellojpa.item.dto.ItemDto;
-import com.tutorial.hellojpa.locker.dto.LockerDto;
 import com.tutorial.hellojpa.locker.entity.Locker;
 import lombok.*;
 

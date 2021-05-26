@@ -1,14 +1,14 @@
 package com.tutorial.hellojpa.company;
 
 import com.tutorial.hellojpa.company.dto.CompanyDto;
-import com.tutorial.hellojpa.company.entity.Company;
 import com.tutorial.hellojpa.company.service.CompanyService;
 import lombok.AllArgsConstructor;
 import lombok.extern.java.Log;
-import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
@@ -39,10 +39,5 @@ public class CompanyController {
     @GetMapping({"/keyword"})
     public List<CompanyDto> searchByKeyword(final CompanyDto param, final Pageable pageable){
         return companyService.searchCompanies(param, pageable);
-    }
-
-    @GetMapping({"/dynamic_search"})
-    public List<CompanyDto> searchCompaniesDynamically(final CompanyDto param, final Pageable pageable){
-        return companyService.searchCompaniesDynamically(param, pageable);
     }
 }

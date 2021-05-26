@@ -3,7 +3,6 @@ package com.tutorial.hellojpa.employee.mapper;
 import com.tutorial.hellojpa.employee.dto.EmployeeDto;
 import com.tutorial.hellojpa.employee.entity.Employee;
 import org.mapstruct.Mapper;
-import org.mapstruct.factory.Mappers;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Component;
 

@@ -1,15 +1,13 @@
 package com.tutorial.hellojpa.common.enumerate;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 @Getter
+@AllArgsConstructor
 public enum GenderType {
     MALE("남성")
     , FEMALE("여성");
 
-    private String value;
-
-    private GenderType(String value) {
-        this.value = value;
-    }
+    private final String value;
 }
