@@ -19,6 +19,7 @@ import java.util.Date;
 public class EmployeeDto {
     private Long employeeIdx;
     private String employeeName;
+    @JsonManagedReference
     private CompanyDto company;
     private String employeePositionType;
     private String genderType;
@@ -26,5 +27,6 @@ public class EmployeeDto {
     private Date joinDate;
     private Date registDateTime;
     private Date updateDateTime;
+    @JsonBackReference
     private Locker locker;
 }

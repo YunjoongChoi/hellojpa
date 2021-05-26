@@ -21,11 +21,11 @@ public class Locker {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long lockerIdx;
+    @JsonManagedReference
     @OneToOne
     @JoinColumn(name = "EMPLOYEE_IDX")
-    @JsonManagedReference
     private Employee employee;
-    @ManyToMany
-    @JsonManagedReference
+    @JsonBackReference
+    @ManyToMany(mappedBy = "lockers")
     private List<Item> items;
 }

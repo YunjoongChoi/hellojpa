@@ -18,6 +18,8 @@ import java.util.List;
 @AllArgsConstructor
 public class LockerDto {
     private Long lockerIdx;
+    @JsonManagedReference
     private EmployeeDto employeeDto;
+    @JsonBackReference
     private List<ItemDto> items;
 }

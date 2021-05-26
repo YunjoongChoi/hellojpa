@@ -21,13 +21,13 @@ import java.util.List;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-@JsonIdentityInfo(generator = ObjectIdGenerators.IntSequenceGenerator.class, property = "company")
 public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long employeeIdx;
     @Column(nullable = false)
     private String employeeName;
+    @JsonManagedReference
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "COMPANY_IDX")
     private Company company;
@@ -43,7 +43,7 @@ public class Employee {
     private Date registDateTime;
     @Temporal(TemporalType.TIMESTAMP)
     private Date updateDateTime;
-    @OneToOne(mappedBy = "employee")
     @JsonBackReference
+    @OneToOne(mappedBy = "employee")
     private Locker locker;
 }

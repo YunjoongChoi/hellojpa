@@ -2,6 +2,7 @@ package com.tutorial.hellojpa.company.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import com.tutorial.hellojpa.company.enumerate.CompanyType;
 import com.tutorial.hellojpa.employee.entity.Employee;
@@ -38,6 +39,7 @@ public class Company {
     private Integer zipcode;
     @Column
     private String homepage;
+    @JsonBackReference
     @OneToMany(mappedBy = "company")
     private List<Employee> employees;
     @Column
