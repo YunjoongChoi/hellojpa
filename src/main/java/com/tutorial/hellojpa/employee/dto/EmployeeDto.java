@@ -1,10 +1,12 @@
 package com.tutorial.hellojpa.employee.dto;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.tutorial.hellojpa.company.dto.CompanyDto;
 import com.tutorial.hellojpa.locker.entity.Locker;
 import lombok.*;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
 import java.util.Date;
@@ -21,6 +23,8 @@ public class EmployeeDto {
     private CompanyDto company;
     private String employeePositionType;
     private String genderType;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyMMdd", timezone = "Asia/Seoul")
     private LocalDate birthDate;
     private Date joinDate;
     private Date registDateTime;
