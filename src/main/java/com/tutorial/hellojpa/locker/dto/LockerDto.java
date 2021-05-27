@@ -15,7 +15,7 @@ import java.util.List;
 public class LockerDto {
     private Long lockerIdx;
     @JsonManagedReference
-    private EmployeeDto employeeDto;
+    private EmployeeDto employee;
     @JsonManagedReference
     private List<ItemDto> items;
 }
