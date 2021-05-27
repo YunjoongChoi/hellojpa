@@ -46,7 +46,7 @@ public class CompanyServiceImpl implements CompanyService{
 
     @Override
     public List<CompanyDto> searchCompanies(CompanyDto param, Pageable pageable) {
-        return companyRepository.findByCompanyTypeEquals(param.getCompanyType(), pageable)
+        return companyRepository.findByCompanyNameContaining(param.getCompanyName(), pageable)
                                 .stream()
                                 .map(Company -> modelMapper.map(Company, CompanyDto.class))
                                 .collect(Collectors.toList());

@@ -1,7 +1,6 @@
 package com.tutorial.hellojpa.company.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.tutorial.hellojpa.company.enumerate.CompanyType;
 import com.tutorial.hellojpa.employee.entity.Employee;
 import lombok.*;
 
@@ -24,8 +23,6 @@ public class Company {
     private String companyName;
     @Lob
     private String descript;
-    @Enumerated(EnumType.STRING)
-    private CompanyType companyType;
     @Column
     private String tel;
     @Column

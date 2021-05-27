@@ -21,7 +21,6 @@ public class EmployeeDto {
     private String employeeName;
     @JsonManagedReference
     private CompanyDto company;
-    private String employeePositionType;
     private String genderType;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyMMdd", timezone = "Asia/Seoul")

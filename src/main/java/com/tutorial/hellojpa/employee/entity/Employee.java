@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.tutorial.hellojpa.common.enumerate.GenderType;
 import com.tutorial.hellojpa.company.entity.Company;
-import com.tutorial.hellojpa.employee.enumerate.EmployeePositionType;
 import com.tutorial.hellojpa.locker.entity.Locker;
 import lombok.*;
 
@@ -28,8 +27,6 @@ public class Employee {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "COMPANY_IDX")
     private Company company;
-    @Enumerated(EnumType.STRING)
-    private EmployeePositionType employeePositionType;
     @Enumerated(EnumType.STRING)
     private GenderType genderType;
     @Column

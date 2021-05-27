@@ -19,7 +19,6 @@ public class CompanyDto {
     private Long companyIdx;
     private String companyName;
     private String descript;
-    private String companyType;
     private String tel;
     private String address;
     private Integer zipcode;

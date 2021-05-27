@@ -21,6 +21,7 @@ public class EmployeeServiceImpl implements EmployeeService{
 
     @Override
     public List<EmployeeDto> getAllEmployees() {
+        List<Employee> test = employeeRepository.findAll();
         return employeeRepository.findAll()
                 .stream()
                 .map(Employee -> modelMapper.map(Employee, EmployeeDto.class))
