@@ -13,9 +13,9 @@
   - 디렉토리 구성을 도메인 단위로 가져간다.
 - JPA
     - `Spring Data JPA`
-    - `@Enumerated`
-    - `@Temporal`
     - `@Lob`
+    - `@Temporal`
+    - `@Enumerated`
     - `@OneToMany`
     - `@ManyToOne`
     - `@OneToOne`
