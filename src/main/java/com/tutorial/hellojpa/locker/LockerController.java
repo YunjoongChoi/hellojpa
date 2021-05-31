@@ -27,7 +27,7 @@ public class LockerController {
     @GetMapping({"/{lockerIdx}"})
     public LockerDto getLocker(@PathVariable final Long lockerIdx){
         return lockerService.getLocker(LockerDto.builder()
-                                                .lockerIdx(lockerIdx)
+                                                    .lockerIdx(lockerIdx)
                                                 .build());
     }
 

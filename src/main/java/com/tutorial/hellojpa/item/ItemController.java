@@ -27,8 +27,8 @@ public class ItemController {
     @GetMapping({"/{itemIdx}"})
     public ItemDto getItem(@PathVariable final Long itemIdx){
         return itemService.getItem(ItemDto.builder()
-                                        .itemIdx(itemIdx)
-                                        .build());
+                                                .itemIdx(itemIdx)
+                                            .build());
     }
 
     @GetMapping({"", "/"})

@@ -23,16 +23,16 @@ public class EmployeeServiceImpl implements EmployeeService{
     public List<EmployeeDto> getAllEmployees() {
         List<Employee> test = employeeRepository.findAll();
         return employeeRepository.findAll()
-                .stream()
-                .map(Employee -> modelMapper.map(Employee, EmployeeDto.class))
-                .collect(Collectors.toList());
+                                    .stream()
+                                    .map(Employee -> modelMapper.map(Employee, EmployeeDto.class))
+                                    .collect(Collectors.toList());
     }
 
     @Override
     public EmployeeDto getEmployee(EmployeeDto param) {
         return modelMapper.map(employeeRepository.findById(param.getEmployeeIdx())
-                                                                .orElse(Employee.builder()
-                                                                                .build()), EmployeeDto.class);
+                                                    .orElse(Employee.builder()
+                                                                    .build()), EmployeeDto.class);
     }
 
     @Override

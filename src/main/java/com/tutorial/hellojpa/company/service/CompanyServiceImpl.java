@@ -32,8 +32,8 @@ public class CompanyServiceImpl implements CompanyService{
     @Override
     public CompanyDto getCompany(CompanyDto param) {
         return modelMapper.map(companyRepository.findById(param.getCompanyIdx())
-                                                                .orElse(Company.builder()
-                                                                                .build()), CompanyDto.class);
+                                                .orElse(Company.builder()
+                                                                .build()), CompanyDto.class);
     }
 
     @Override

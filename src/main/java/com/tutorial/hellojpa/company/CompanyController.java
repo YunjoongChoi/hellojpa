@@ -27,7 +27,7 @@ public class CompanyController {
     @GetMapping({"/{companyIdx}"})
     public CompanyDto getCompany(@PathVariable final Long companyIdx){
         return companyService.getCompany(CompanyDto.builder()
-                                                    .companyIdx(companyIdx)
+                                                        .companyIdx(companyIdx)
                                                     .build());
     }
 

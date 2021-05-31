@@ -30,8 +30,8 @@ public class ItemServiceImpl implements ItemService{
     @Override
     public ItemDto getItem(ItemDto param) {
         return modelMapper.map(itemRepository.findById(param.getItemIdx())
-                                                            .orElse(Item.builder()
-                                                                        .build()), ItemDto.class);
+                                                .orElse(Item.builder()
+                                                            .build()), ItemDto.class);
     }
 
     @Override
