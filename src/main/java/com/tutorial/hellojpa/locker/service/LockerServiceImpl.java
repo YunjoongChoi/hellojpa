@@ -30,8 +30,8 @@ public class LockerServiceImpl implements LockerService{
     @Override
     public LockerDto getLocker(LockerDto param) {
         return modelMapper.map(lockerRepository.findById(param.getLockerIdx())
-                                                                .orElse(Locker.builder()
-                                                                                .build()), LockerDto.class);
+                                                .orElse(Locker.builder()
+                                                                .build()), LockerDto.class);
     }
 
     @Override
